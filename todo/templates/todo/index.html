@@ -45,7 +45,7 @@
 
         function buildList() {
 
-            fetch("http://127.0.0.1:8000/list")
+            fetch("https://django-todolist-wc6m.onrender.com/list")
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -85,7 +85,7 @@
                 title: titleInput,
             };
 
-            fetch("http://127.0.0.1:8000/create", {
+            fetch("https://django-todolist-wc6m.onrender.com/create", {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",
@@ -107,7 +107,7 @@
 
         function deleteItem(item) {
             const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-            let url = `http://127.0.0.1:8000/delete/${item}`
+            let url = `https://django-todolist-wc6m.onrender.com/delete/${item}`
             fetch(url, {
                 method: "DELETE",
                 headers: {
